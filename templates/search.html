@@ -1,0 +1,13 @@
+<div id="search">
+<hr>
+    <form action="{% url 'search' %}" method="GET">
+        <label>Search: </label>
+        <input name="q" value="{{ search_query }}">
+        <input type="submit" value="search">
+        {% if page == 'post' %}
+        | <a href="{% url 'posts' %}">Homepage</a>
+        {% endif %}
+    </form>
+<hr>
+
+</div>

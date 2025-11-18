@@ -1,0 +1,8 @@
+py manage.py shell
+
+>>> exec(open("populate_db.py").read())
+
+
+>>> exit()
+
+

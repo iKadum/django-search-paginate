@@ -1,0 +1,15 @@
+{% extends 'main.html' %}
+
+{% block content %}
+    <div id="content">
+        <p><a href="{% url 'post' post.id|add:-1 %}">Previous Post</a> | <a href="{% url 'posts' %}">Homepage</a> | <a href="{% url 'post' post.id|add:1 %}">Next Post</a></p>
+
+        <h1>{{ post.title }}</h1>
+
+        <h3><i>{{ post.description }}</i></h3>
+
+        {{ post.post | safe }}
+
+    {% include "search.html" %}
+    </div>
+{% endblock %}

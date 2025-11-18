@@ -1,0 +1,25 @@
+{% extends 'main.html' %}
+
+{% block content %}
+    <div id="content">
+        <h1><a href="{% url 'posts' %}">Search and Pagination</a></h1>
+
+        {% include "search.html" %}
+
+        {% for post in posts %}
+
+        <h2><a href="{% url 'post' post.id %}">{{ post.title }}</a></h2>
+        <p>{{ post.description }}</p>
+        <br>
+
+            {% if not forloop.last %}
+            <hr>
+            {% endif %}
+
+        {% endfor %}
+
+    </div>
+
+    {% include "pagination.html" with queryset=posts %}
+
+{% endblock %}
